@@ -1,0 +1,1 @@
+export { SegmentPagination } from "./SegmentPagination";

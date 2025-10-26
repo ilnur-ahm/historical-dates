@@ -1,46 +1,76 @@
-# Getting Started with Create React App
+Интерактивная временная линия, показывающая события по различным категориям.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Технологии
 
-## Available Scripts
+- **React 19** - UI библиотека
+- **TypeScript** - типизированный JavaScript
+- **Styled Components** - CSS-in-JS стилизация
+- **GSAP** - анимации
+- **Swiper** - слайдеры
+- **Webpack** - сборка проекта
 
-In the project directory, you can run:
+## Установка
 
-### `npm start`
+1. Клонируйте репозиторий:
+   git clone <repository-url>
+   cd historical-dates
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+2. Установите зависимости:
+   npm install
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Запуск в режиме разработки
 
-### `npm test`
+npm start или npm run dev
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Приложение откроется в браузере по адресу: `http://localhost:3030`
 
-### `npm run build`
+## Структура проекта
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+src/
+├── assets/          # Статические ресурсы (SVG, изображения)
+├── components/      # React компоненты
+│   ├── EventsSlider/
+│   ├── TimeCircle/
+│   ├── TimelineHeader/
+│   └── TimelineNavigation/
+├── constants/       # Константы (медиа-запросы, брейкпоинты, цвета)
+├── hooks/           # Кастомные хуки
+│   ├── useEventsSlider.ts
+│   ├── useTimeline.ts
+│   └── useYearAnimation.ts
+├── styles/          # Глобальные стили
+├── utils/           # Утилиты
+├── App.tsx          # Главный компонент
+└── mock.ts          # Моковые данные
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Основные возможности
 
-### `npm run eject`
+- **Интерактивный круг времени** - визуализация временных периодов с точками навигации
+- **Анимация лет** - плавное переключение между годами при смене периода
+- **Слайдер событий** - просмотр событий каждого периода
+- **Адаптивный дизайн** - поддержка мобильных и десктоп устройств
+- **Навигация** - кнопки и пагинация для переключения между периодами
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Настройка
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Конфигурация Webpack
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Конфигурация находится в `webpack.config.js`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Алиасы импортов
 
-## Learn More
+Проект использует алиасы для удобного импорта:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- `@/` - src/
+- `@assets/` - src/assets/
+- `@components/` - src/components/
+- `@hooks/` - src/hooks/
+- `@styles/` - src/styles/
+- `@constants/` - src/constants/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Данные
+
+Моковые данные находятся в `src/mock.ts`. Вы можете изменить периоды, категории и события в этом файле.
